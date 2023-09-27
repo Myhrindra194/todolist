@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(153,148,233,1) 100%);
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+.inputTask {
+    height: 40px;
+    text-indent: 10px;
+}
+.content {
+    box-shadow: 0 5px 10px #777;
+    border-radius: 15px;
+
+}
+.todo-list {
+    height: 60vh;
+    overflow-y: scroll;
+}
+.confirm {
+    display: none;
+}
