@@ -26,3 +26,6 @@ body {
 .confirm {
     display: none;
 }
+.linethrough {
+    text-decoration: line-through;
+}

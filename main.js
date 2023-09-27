@@ -17,9 +17,8 @@ const createTask = (inputTask) => {
 const showTask = () => {
     let items = "";
      for(let i = 0; i < itemsList.length; i++){
-        items += `<div class="list">
-                    <input type="checkbox" name="" id="checkbox">
-                    <textarea class= "textEdit" disabled>${itemsList[i]}</textarea>
+        items += `<div class="list p-3">
+                    <textarea class = "textEdit" disabled>${itemsList[i]}</textarea>
                     <div class="icon">
                     <i class="fas fa-edit edit"></i>
                     <i class="fas fa-trash delete"></i>
@@ -56,7 +55,7 @@ const activateEdit = () => {
 const activateSave = () => {
     document.querySelectorAll(".save").forEach((btn, i) => {
         btn.addEventListener("click", () => {
-            updateItem(textArea[i].value , i);
+            updateItem(document.querySelectorAll(".textEdit")[i].value , i);
         })
     })
 }
