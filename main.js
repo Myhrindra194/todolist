@@ -1,12 +1,6 @@
 const itemsList = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : [];
 const inputTask = document.querySelector(".inputTask");
 
-const getDate = () => {
-    let date = new Date();
-    date = date.toString().split(" ");
-    document.querySelector(".date").innerText = date[1] + " "+ date[2] + " " +date[3];
-}
-
 const createTask = (inputTask) => {
     if(inputTask.value.trim() !== ""){
         itemsList.push(inputTask.value);
@@ -17,18 +11,22 @@ const createTask = (inputTask) => {
 const showTask = () => {
     let items = "";
      for(let i = 0; i < itemsList.length; i++){
-        items += ` <div class=" row list justify-content-space-between  py-2 mx-3 mb-3" >
-        <div class="cadre col-9">
-            <textarea class = "textEdit col-12" disabled>${itemsList[i]}</textarea>
-        </div>
-        <div class="icon col-2 d-flex  align-items-center ">
-            <i class="fas fa-edit edit text-primary fs-5"></i>
+        items += `<div class="row justify-content-center mt-3">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="items d-flex align-items-center">
+                <textarea class = "textEdit col-10" disabled>${itemsList[i]}</textarea>
+              <i class="fas fa-edit edit text-primary fs-5"></i>
             <i class="fas fa-trash delete text-danger fs-5"></i>
+              </div>
+            <div class="confirm mt-3">
+                <button type="button" class="btn btn-danger cancel">Cancel</button>
+                <button type="button" class="btn btn-success save">Save</button>
+            </div>
+            </div>
+          </div>
         </div>
-    </div>              
-    <div class="confirm mb-3 px-3 ">
-            <button type="button" class="btn btn-danger cancel">Cancel</button>
-            <button type="button" class="btn btn-success save">Save</button>
     </div>`;
     }
     document.querySelector(".todo-list").innerHTML += items;
@@ -101,6 +99,5 @@ document.querySelector(".addTask").addEventListener("click", () => {
 
 window.onload = () => {
     inputTask.value = ""
-    getDate(); 
     showTask();
 }

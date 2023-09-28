@@ -12,21 +12,19 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <main>
-        <div class="container d-flex ">
-            <div class="mx-auto content bg-light">
-                <h1 class="header-title p-3 text-center bg-danger text-light">TODO LIST</h1>
-                <div class="task p-3 d-flex justify-content-center">
-                    <input type="text" placeholder="Enter a task ..." class="inputTask col-10 bg-light" >
-                <button type="button" class="btn btn-success text-light addTask"><i class="fas fa-add "></i></button> 
+    <div class="container ">
+        <div class="row justify-content-center mt-md-5">
+            <div class="content bg-light col-12 col-md-6 py-3">
+                <h1 class="content-title mt-3 text-center ">TODO LIST</h1>
+                <div class="input-group my-3 pb-3">
+                    <input type="text" class="form-control inputTask  bg-light" placeholder="Add new task">
+                    <button class="btn addTask text-light" type="button" id="button"><i class="fas fa-add"></i></button>
                 </div>
-                <div class="todo-list">
-                    <h6 class="text-muted date text-center mb-3"></h6>
-                </div>
+            <div class="todo-list col-12"></div>
+
             </div>
+
         </div>
-    </main>
-   
-    
+    </div>
 </body>
 </html>
