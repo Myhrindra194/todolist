@@ -17,19 +17,21 @@ const createTask = (inputTask) => {
 const showTask = () => {
     let items = "";
      for(let i = 0; i < itemsList.length; i++){
-        items += `<div class="list p-3">
-                    <textarea class = "textEdit" disabled>${itemsList[i]}</textarea>
-                    <div class="icon">
-                    <i class="fas fa-edit edit"></i>
-                    <i class="fas fa-trash delete"></i>
-                    <div class="confirm">
-                        <button type="button" class="btn btn-danger cancel"><i class="fas fa-ban"></i></button>
-                        <button type="button" class="btn btn-success save"><i class="fas fa-check"></i></button>
-                    </div>
-                </div>
-            </div>`;
+        items += ` <div class=" row list justify-content-space-between  py-2 mx-3 mb-3" >
+        <div class="cadre col-9">
+            <textarea class = "textEdit col-12" disabled>${itemsList[i]}</textarea>
+        </div>
+        <div class="icon col-2 d-flex  align-items-center ">
+            <i class="fas fa-edit edit text-primary fs-5"></i>
+            <i class="fas fa-trash delete text-danger fs-5"></i>
+        </div>
+    </div>              
+    <div class="confirm mb-3 px-3 ">
+            <button type="button" class="btn btn-danger cancel">Cancel</button>
+            <button type="button" class="btn btn-success save">Save</button>
+    </div>`;
     }
-    document.querySelector(".todo-list").innerHTML = items;
+    document.querySelector(".todo-list").innerHTML += items;
     activateDelete();
     activateEdit();
     activateSave();
@@ -42,11 +44,13 @@ const activateDelete = () => {
     });
 }
 
+
 const activateEdit = () => {
     document.querySelectorAll(".edit").forEach((btn, i) => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".confirm")[i].style.display = "block";
             document.querySelectorAll(".textEdit")[i].disabled = false;
+            document.querySelectorAll(".textEdit")[i].style.background = "white";
 
         });
     });
