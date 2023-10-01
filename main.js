@@ -107,5 +107,8 @@ window.onload = () => {
     inputTask.value = ""
     showTask();
     getDate();
-    console.log(itemsList.length);
+    document.addEventListener("keypress", (e) => {
+        if(e.key == "Enter")
+            createTask(inputTask);
+    })
 }
