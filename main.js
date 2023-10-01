@@ -78,7 +78,7 @@ const activateCancel = () => {
     })
 }
 
-const updateItem = (newValue, i) => {
+const updateTask = (newValue, i) => {
     if(newValue.trim() !== ""){
         itemsList[i] = newValue;
         reload();
