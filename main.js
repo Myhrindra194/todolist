@@ -1,5 +1,11 @@
 const itemsList = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : [];
 const inputTask = document.querySelector(".inputTask");
+document.querySelector(".taskNumber").textContent = itemsList.length;
+
+const getDate = () => {
+    let date = new Date().toString().split(" ");
+    document.querySelector(".date").textContent = date[0] +" "+ date[1] + " "+ date[2];
+}
 
 const createTask = (inputTask) => {
     if(inputTask.value.trim() !== ""){
@@ -100,4 +106,6 @@ document.querySelector(".addTask").addEventListener("click", () => {
 window.onload = () => {
     inputTask.value = ""
     showTask();
+    getDate();
+    console.log(itemsList.length);
 }
