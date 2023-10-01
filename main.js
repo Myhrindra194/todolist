@@ -63,7 +63,7 @@ const activateEdit = () => {
 const activateSave = () => {
     document.querySelectorAll(".save").forEach((btn, i) => {
         btn.addEventListener("click", () => {
-            updateItem(document.querySelectorAll(".textEdit")[i].value , i);
+            updateTask(document.querySelectorAll(".textEdit")[i].value , i);
         })
     })
 }
@@ -84,7 +84,7 @@ const updateTask = (newValue, i) => {
         reload();
     }
     else {
-        alert("Please enter a value");
+        alert("Please enter a task");
     }
 }
 
